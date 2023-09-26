@@ -1,14 +1,14 @@
-%global git_date  20230622
-%global git_hash  599d00be9
-%global git_full_hash  599d00be9de2846c6ea18c1487d8329522ade22b
-%global git_ver  2.10
+%global hostapd_git_snapshot_commit_date  20230622
+%global hostapd_git_snapshot_commit_short_hash  599d00be9
+%global hostapd_git_snapshot_commit_full_hash  599d00be9de2846c6ea18c1487d8329522ade22b
+%global hostapd_ver  2.10
 %global rel 1
-%global source_file_package_url https://w1.fi/cgit/hostap/snapshot/hostap-%{git_full_hash}.tar.bz2
+%global source_file_package_url https://w1.fi/cgit/hostap/snapshot/hostap-%{hostapd_git_snapshot_commit_full_hash}.tar.bz2
 
 %global _hardened_build 1
 
 Name:           hostapd
-Version:	%{git_ver}^%{git_date}g%{git_hash}
+Version:	%{hostapd_ver}^%{hostapd_git_snapshot_commit_date}g%{hostapd_git_snapshot_commit_short_hash}
 Release:	%{rel}%{?dist}
 Summary:        IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
 License:        BSD
@@ -54,7 +54,7 @@ Requires:       perl-interpreter
 Logwatch scripts for hostapd.
 
 %prep
-%autosetup -n hostap -p1
+%autosetup -n hostap-%{hostapd_git_snapshot_commit_full_hash} -p1
 
 
 %build
