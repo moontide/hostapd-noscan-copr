@@ -3,7 +3,7 @@
 %global git_full_hash  599d00be9de2846c6ea18c1487d8329522ade22b
 %global git_ver  2.10
 %global rel 1
-%global source_file_package_url http://w1.fi/cgit/hostap/snapshot/hostap-%{git_full_hash}.tar.bz2
+%global source_file_package_url https://w1.fi/cgit/hostap/snapshot/hostap-%{git_full_hash}.tar.bz2
 
 %global _hardened_build 1
 
@@ -148,7 +148,7 @@ cp %{name}/logwatch/README ./README.logwatch
 %{_sysconfdir}/logwatch/scripts/services/%{name}
 
 %changelog
-* 2023-09-26 LiuYan <lovetide1@gmail.com>
+* Tue Sep 29 2023 LiuYan <lovetide1@gmail.com>
 - 克隆自 https://copr.fedorainfracloud.org/coprs/dturner/hostapd-noscan/ 2023-06-22 的版本，改为直接从 w1.fi 的 cgit 获取源代码包。
 * Mon Sep 05 2022 Dale Turner <rxguyrx@gmail.com>
 - Build from git; Added noscan patch
